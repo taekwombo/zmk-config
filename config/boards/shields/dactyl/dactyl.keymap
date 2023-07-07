@@ -1,0 +1,92 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#define L_DF 0
+#define L_LO 1
+#define L_MN 2
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+/* QWERTY
+ *                ┌──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┐
+ *                │   2  │   3  │   4  │   5  │                    │   6  │   7  │   8  │   9  │
+ *  ┌──────┬──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┬──────┐
+ *  │  `   │   1  │   W  │   E  │   R  │   T  │                    │   Y  │   U  │   I  │   O  │   0  │  -   │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │ Tab  │   Q  │   S  │   D  │   F  │   G  │                    │   H  │   J  │   K  │   L  │   P  │  =   │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │  \   │   A  │   X  │   C  │   V  │   B  │                    │   N  │   M  │   ,  │   .  │   ;  │  '   │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │LSFIFT│   Z  │ LALT │ APP  │ BSPC │ LCTL │                    │ RCTL │   [  │   ]  │ RALT │   /  │RSHIFT│
+ *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
+ *                                │ LGUI │  │ SPC  │          │ RET  │  │ MOD  │           
+ *                                └──────┘  └──────┘          └──────┘  └──────┘           
+ */
+        default_layer {
+            bindings = <
+                   &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8     &kp N9
+&kp GRAVE  &kp N1  &kp W     &kp E     &kp R     &kp T        &kp Y      &kp U     &kp I      &kp O     &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp S     &kp D     &kp F     &kp G        &kp H      &kp J     &kp K      &kp L     &kp P     &kp EQUAL
+&kp BSLH   &kp A   &kp X     &kp C     &kp V     &kp B        &kp N      &kp M     &kp COMMA  &kp DOT   &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp LALT  &kp K_APP &kp BSPC  &kp LCTRL    &kp RCTRL  &kp LBKT  &kp RBKT   &kp RALT  &kp FSLH  &kp RSHFT
+                                      &kp LGUI   &kp SPACE    &kp RET    &mo L_LO
+            >;
+        };
+
+/* LOWER
+ *                ┌──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┐
+ *                │  F3  │  F4  │  F5  │  F6  │                    │  F7  │  F8  │  F9  │ F10  │
+ *  ┌──────┬──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┬──────┐
+ *  │  F1  │  F2  │ BRI+ │ INS  │ PGUP │ HOME │                    │      │      │      │      │ F11  │ F12  │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │ VOL+ │ NEXT │ BRI- │ DEL  │ PGDN │ END  │                    │ LEFT │ DOWN │  UP  │ RGHT │      │ CAPS │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │ VOL- │ PREV │      │      │      │      │                    │      │      │      │      │      │ SCRL │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │ MUTE │  PP  │      │      │      │ ESC  │                    │      │      │      │      │      │      │
+ *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
+ *                                │ MOD  │  │      │          │      │  │      │           
+ *                                └──────┘  └──────┘          └──────┘  └──────┘           
+ */
+        lower_layer {
+            bindings = <
+                        &kp F3       &kp F4  &kp F5    &kp F6         &kp F7   &kp F8   &kp F9 &kp F10
+&kp F1       &kp F2     &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none  &none     &kp F11  &kp F12
+&kp C_VOL_UP &kp C_NEXT &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP &kp RIGHT &none    &kp CAPS
+&kp C_VOL_DN &kp C_PREV &none        &none   &none     &none          &none    &none    &none  &none     &none    &kp SLCK
+&kp C_MUTE   &kp C_PP   &none        &none   &none     &kp ESC        &none    &none    &none  &none     &none    &none
+                                             &mo L_MN  &none          &none    &none
+             >;
+        };
+
+/* EXTRA
+ *                ┌──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┐
+ *                │      │      │      │      │                    │BSEL0 │BSEL1 │BSEL2 │BSEL3 │
+ *  ┌──────┬──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┬──────┐
+ *  │BOOTL │      │      │      │      │      │                    │      │      │      │      │      │BOOTL │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │      │      │BCLEAR│                    │BNEXT │BPREV │      │      │      │      │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │      │      │      │                    │      │      │      │      │      │      │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │RESET │      │      │      │      │      │                    │      │      │      │      │      │ RESET│
+ *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
+ *                                │      │  │      │          │      │  │      │           
+ *                                └──────┘  └──────┘          └──────┘  └──────┘           
+ */
+        extra_layer {
+            bindings = <
+                  &none &none &none  &none            &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+&bootloader &none &none &none &none  &none            &none        &none        &none        &none        &none  &bootloader
+&none       &none &none &none &none  &bt BT_CLR       &bt BT_NXT   &bt BT_PRV   &none        &none        &none  &none
+&none       &none &none &none &none  &none            &none        &none        &none        &none        &none  &none
+&sys_reset  &none &none &none &none  &none            &none        &none        &none        &none        &none  &sys_reset
+                              &none  &none            &none        &none
+            >;
+        };
+    };
+};
