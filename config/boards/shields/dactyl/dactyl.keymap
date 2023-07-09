@@ -47,7 +47,7 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │ VOL- │ PREV │      │      │      │      │                    │      │      │      │      │      │ SCRL │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ MUTE │  PP  │      │      │      │ ESC  │                    │      │      │      │      │      │      │
+ *  │ MUTE │  PP  │      │      │      │ ESC  │                    │      │      │      │      │      │REPEAT│
  *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
  *                                │ MOD  │  │      │          │      │  │      │           
  *                                └──────┘  └──────┘          └──────┘  └──────┘           
@@ -58,7 +58,7 @@
 &kp F1       &kp F2     &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none  &none     &kp F11  &kp F12
 &kp C_VOL_UP &kp C_NEXT &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP &kp RIGHT &none    &kp CAPS
 &kp C_VOL_DN &kp C_PREV &none        &none   &none     &none          &none    &none    &none  &none     &none    &kp SLCK
-&kp C_MUTE   &kp C_PP   &none        &none   &none     &kp ESC        &none    &none    &none  &none     &none    &none
+&kp C_MUTE   &kp C_PP   &none        &none   &none     &kp ESC        &none    &none    &none  &none     &none    &key_repeat
                                              &mo L_MN  &none          &none    &none
              >;
         };
@@ -73,7 +73,7 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │      │      │      │      │      │      │                    │      │      │      │      │      │      │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │RESET │      │      │      │      │      │                    │      │      │      │      │      │ RESET│
+ *  │RESET │      │      │      │      │      │                    │      │      │      │      │      │RESET │
  *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
  *                                │      │  │      │          │      │  │      │           
  *                                └──────┘  └──────┘          └──────┘  └──────┘           
