@@ -23,17 +23,17 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │LSFIFT│   Z  │ LALT │ APP  │ BSPC │ LCTL │                    │ RCTL │REPEAT│   [  │   ]  │   /  │RSHIFT│
  *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
- *                                │ LGUI │  │ SPC  │          │RALT/⮠│  │ MOD  │           
+ *                                │ LGUI │  │RALT/␣│          │  ⮠   │  │ MOD  │           
  *                                └──────┘  └──────┘          └──────┘  └──────┘           
  */
         qwerty_layer {
             bindings = <
-                   &kp N2    &kp N3    &kp N4    &kp N5       &kp N6          &kp N7      &kp N8     &kp N9
-&kp GRAVE  &kp N1  &kp W     &kp E     &kp R     &kp T        &kp Y           &kp U       &kp I      &kp O     &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp S     &kp D     &kp F     &kp G        &kp H           &kp J       &kp K      &kp L     &kp P     &kp EQUAL
-&kp BSLH   &kp A   &kp X     &kp C     &kp V     &kp B        &kp N           &kp M       &kp COMMA  &kp DOT   &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp LALT  &kp K_APP &kp BSPC  &kp LCTRL    &kp RCTRL       &key_repeat &kp LBKT   &kp RBKT  &kp FSLH  &kp RSHFT
-                                      &kp LGUI   &kp SPACE    &mt RALT RET &mo L_LOW
+                   &kp N2    &kp N3    &kp N4    &kp N5             &kp N6          &kp N7      &kp N8     &kp N9
+&kp GRAVE  &kp N1  &kp W     &kp E     &kp R     &kp T              &kp Y           &kp U       &kp I      &kp O     &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp S     &kp D     &kp F     &kp G              &kp H           &kp J       &kp K      &kp L     &kp P     &kp EQUAL
+&kp BSLH   &kp A   &kp X     &kp C     &kp V     &kp B              &kp N           &kp M       &kp COMMA  &kp DOT   &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp LALT  &kp K_APP &kp BSPC  &kp LCTRL          &kp RCTRL       &key_repeat &kp LBKT   &kp RBKT  &kp FSLH  &kp RSHFT
+                                       &kp LGUI  &mt RALT SPACE     &kp RET         &mo L_LOW
             >;
         };
 
@@ -47,18 +47,18 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │ VOL- │ PREV │      │      │      │      │                    │      │      │      │      │      │ SCRL │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ MUTE │  PP  │      │      │      │ ESC  │                    │      │      │      │      │      │CAPS_W│
+ *  │ MUTE │  PP  │      │      │      │      │                    │      │      │ ESC  │      │      │CAPS_W│
  *  └──────┴──────┴──────┴──────┴─┬────┴─┬──┬─┴────┐          ┌────┴─┬──┬─┴────┬─┴──────┴──────┴──────┴──────┘
  *                                │ MOD  │  │      │          │      │  │      │           
  *                                └──────┘  └──────┘          └──────┘  └──────┘           
  */
         lower_layer {
             bindings = <
-                        &kp F3       &kp F4  &kp F5    &kp F6         &kp F7   &kp F8   &kp F9 &kp F10
-&kp F1       &kp F2     &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none  &none     &kp F11  &kp F12
-&kp C_VOL_UP &kp C_NEXT &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP &kp RIGHT &none    &kp CAPS
-&kp C_VOL_DN &kp C_PREV &none        &none   &none     &none          &none    &none    &none  &none     &none    &kp SLCK
-&kp C_MUTE   &kp C_PP   &none        &none   &none     &kp ESC        &none    &none    &none  &none     &none    &caps_word
+                        &kp F3       &kp F4  &kp F5    &kp F6         &kp F7   &kp F8   &kp F9  &kp F10
+&kp F1       &kp F2     &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none   &none     &kp F11  &kp F12
+&kp C_VOL_UP &kp C_NEXT &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none    &kp CAPS
+&kp C_VOL_DN &kp C_PREV &none        &none   &none     &none          &none    &none    &none   &none     &none    &kp SLCK
+&kp C_MUTE   &kp C_PP   &none        &none   &none     &none          &none    &none    &kp ESC &none     &none    &caps_word
                                              &mo L_SYS &none          &none    &none
              >;
         };
