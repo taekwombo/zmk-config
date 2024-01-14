@@ -10,7 +10,7 @@
 / {
     behaviors {
         RA_LOW: mod_morph_ralt_l_low {
-            compatible = "zmk,behaviour-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RALT>, <&mo L_LOW>;
             mods = <(MOD_LALT|MOD_LGUI)>;
