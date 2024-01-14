@@ -17,7 +17,6 @@
         };
         LA_GUI: tap_dance_lalt_l_gui {
             compatible = "zmk,behavior-tap-dance";
-            label = "LALT_LGUI TD";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LALT>, <&kp LGUI>;
