@@ -9,12 +9,11 @@
 
 / {
     behaviors {
-        RA_LOW: tap_dance_ralt_l_low {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RALT_LLOW TD";
+        RA_LOW: mod_morph_ralt_l_low {
+            compatible = "zmk,behaviour-mod-morph";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
             bindings = <&kp RALT>, <&mo L_LOW>;
+            mods = <(MOD_LALT|MOD_LGUI)>;
         };
         LA_GUI: tap_dance_lalt_l_gui {
             compatible = "zmk,behavior-tap-dance";
@@ -64,9 +63,9 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │ MUTE │  PP  │      │      │      │      │                    │      │      │      │      │      │ APP  │
  *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │      │      │      │L_SYS │                    │      │      │ ESC  │      │
+ *                │      │      │ LGUI │ LALT │                    │      │      │ ESC  │      │
  *                └──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
- *                                          │      │          │      │                     
+ *                                          │L_SYS │          │      │                     
  *                                          └──────┘          └──────┘                     
  */
         lower_layer {
@@ -75,8 +74,8 @@
 &kp C_VOL_UP &kp C_NEXT &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none   &none     &none    &kp CAPS
 &kp C_VOL_DN &kp C_PREV &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none    &kp SLCK
 &kp C_MUTE   &kp C_PP   &none        &none   &none     &none          &none    &none    &none   &none     &none    &kp K_APP
-                        &none        &none   &none     &mo L_SYS      &none    &none    &kp ESC &none     
-                                                       &none          &none
+                        &none        &none   &kp LGUI  &kp LALT       &none    &none    &kp ESC &none     
+                                                       &mo L_SYS      &none
              >;
         };
 
