@@ -13,7 +13,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RALT>, <&mo L_LOW>;
-            mods = <(MOD_LALT|MOD_LGUI|MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RCTL)>;
             keep-mods = <(MOD_LALT|MOD_LGUI)>;
         };
         LA_GUI: tap_dance_lalt_l_gui {
