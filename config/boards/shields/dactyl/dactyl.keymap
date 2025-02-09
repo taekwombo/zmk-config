@@ -13,14 +13,20 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RALT>, <&mo L_LOW>;
-            mods = <(MOD_LALT|MOD_LGUI|MOD_RSFT|MOD_RCTL)>;
-            keep-mods = <(MOD_LALT|MOD_LGUI)>;
+            mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT)>;
         };
         LA_GUI: tap_dance_lalt_l_gui {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LALT>, <&kp LGUI>;
+        };
+        TO_LOW: tap_dance_caps_word_to_low {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&caps_word>, <&to L_LOW>;
         };
     };
 
@@ -37,7 +43,7 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │LSFIFT│   Z  │   X  │   C  │   V  │   B  │                    │   N  │   M  │   ,  │   .  │   /  │RSHIFT│
  *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │CAPS_W│ BSPC │LA_GUI│ LCTL │                    │ RCTL │RA_LOW│   [  │   ]  │
+ *                │TO_LOW│ BSPC │LA_GUI│ LCTL │                    │ RCTL │RA_LOW│   [  │   ]  │
  *                └──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
  *                                          │   ␣  │          │ RET  │
  *                                          └──────┘          └──────┘
@@ -48,7 +54,7 @@
 &kp TAB    &kp Q   &kp W        &kp E     &kp R     &kp T       &kp Y      &kp U       &kp I      &kp O     &kp P     &kp EQUAL
 &kp BSLH   &kp A   &kp S        &kp D     &kp F     &kp G       &kp H      &kp J       &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X        &kp C     &kp V     &kp B       &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &caps_word   &kp BSPC  &LA_GUI   &kp LCTRL   &kp RCTRL  &RA_LOW     &kp LBKT   &kp RBKT
+                   &TO_LOW      &kp BSPC  &LA_GUI   &kp LCTRL   &kp RCTRL  &RA_LOW     &kp LBKT   &kp RBKT
                                                     &kp SPACE   &kp RET
             >;
         };
@@ -63,10 +69,10 @@
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │ MUTE │  PP  │      │      │      │      │                    │      │      │      │      │      │ APP  │
  *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │      │      │      │      │                    │      │      │ ESC  │      │
+ *                │L_DEF │      │      │      │                    │      │      │ ESC  │      │
  *                └──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
  *                                          │L_SYS │          │      │                     
- *                                          └──────┘          └─────┘                     
+ *                                          └──────┘          └──────┘                     
  */
         lower_layer {
             bindings = <
@@ -74,7 +80,7 @@
 &kp C_VOL_UP &kp C_NEXT &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none   &none     &none    &kp CAPS
 &kp C_VOL_DN &kp C_PREV &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none    &kp SLCK
 &kp C_MUTE   &kp C_PP   &none        &none   &none     &none          &none    &none    &none   &none     &none    &kp K_APP
-                        &none        &none   &none     &none          &none    &none    &kp ESC &none     
+                        &to L_DEF    &none   &none     &none          &none    &none    &kp ESC &none     
                                                        &mo L_SYS      &none
              >;
         };
