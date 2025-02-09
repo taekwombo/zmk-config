@@ -34,81 +34,82 @@
         compatible = "zmk,keymap";
 
 /* QWERTY
- *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
- *  │  `   │   1  │   2  │   3  │   4  │   5  │                    │   6  │   7  │   8  │   9  │   0  │  -   │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ Tab  │   Q  │   W  │   E  │   R  │   T  │                    │   Y  │   U  │   I  │   O  │   P  │  =   │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │  \   │   A  │   S  │   D  │   F  │   G  │                    │   H  │   J  │   K  │   L  │   ;  │  '   │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │LSFIFT│   Z  │   X  │   C  │   V  │   B  │                    │   N  │   M  │   ,  │   .  │   /  │RSHIFT│
- *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │TO_LOW│ BSPC │LA_GUI│ LCTL │                    │ RCTL │RA_LOW│   [  │   ]  │
- *                └──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
- *                                          │   ␣  │          │ RET  │
- *                                          └──────┘          └──────┘
+ *  ┌───────┬──────┬──────┬──────┬──────┬──────┐                                                   ┌──────┬──────┬──────┬──────┬──────┬──────┐
+ *  │  `    │   1  │   2  │   3  │   4  │   5  │                                                   │   6  │   7  │   8  │   9  │   0  │  -   │
+ *  ├───────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │ Tab   │   Q  │   W  │   E  │   R  │   T  │                                                   │   Y  │   U  │   I  │   O  │   P  │  =   │
+ *  ├───────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │  \    │   A  │   S  │   D  │   F  │   G  │                                                   │   H  │   J  │   K  │   L  │   ;  │  '   │
+ *  ├───────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │LSFIFTT│   Z  │   X  │   C  │   V  │   B  │                                                   │   N  │   M  │   ,  │   .  │   /  │RSHIFT│
+ *  └───────┴──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┴──────┘
+ *                 │TO_LOW│ BSPC │LA_GUI│ LCTL │                                                   │ RCTL │RA_LOW│   [  │   ]  │
+ *                 └──────┴──────┴──────┴────┬─┴────┐                                         ┌────┴─┬────┴──────┴──────┴──────┘
+ *                                           │   ␣  │                                         │ RET  │
+ *                                           └──────┘                                         └──────┘
  */
         qwerty_layer {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2       &kp N3    &kp N4    &kp N5      &kp N6     &kp N7      &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W        &kp E     &kp R     &kp T       &kp Y      &kp U       &kp I      &kp O     &kp P     &kp EQUAL
-&kp BSLH   &kp A   &kp S        &kp D     &kp F     &kp G       &kp H      &kp J       &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X        &kp C     &kp V     &kp B       &kp N      &kp M       &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &TO_LOW      &kp BSPC  &LA_GUI   &kp LCTRL   &kp RCTRL  &RA_LOW     &kp LBKT   &kp RBKT
-                                                    &kp SPACE   &kp RET
+&kp GRAVE    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp N6          &kp N6        &kp N8        &kp N9        &kp N0        &kp MINUS
+&kp TAB      &kp Q         &kp W         &kp E         &kp R         &kp T                   &kp Y           &kp U         &kp I         &kp O         &kp P         &kp EQUAL
+&kp BSLH     &kp A         &kp S         &kp D         &kp F         &kp G                   &kp H           &kp J         &kp K         &kp L         &kp SEMI      &kp SQT
+&kp LSHFT    &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp N           &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
+                           &TO_LOW       &kp BSPC      &LA_GUI       &kp LCTRL               &kp RCTRL       &RA_LOW       &kp LBKT      &kp RBKT
+                                                                     &kp SPACE               &kp RET
             >;
         };
 
 /* LOWER
- *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
- *  │  F1  │  F2  │  F3  │  F4  │  F5  │  F6  │                    │  F7  │  F8  │  F9  │ F10  │ F11  │ F12  │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ VOL+ │ NEXT │ BRI+ │ INS  │ PGUP │ HOME │                    │      │      │      │      │      │ CAPS │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ VOL- │ PREV │ BRI- │ DEL  │ PGDN │ END  │                    │ LEFT │ DOWN │  UP  │ RGHT │      │ SCRL │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │ MUTE │  PP  │      │      │      │      │                    │      │      │      │      │      │ APP  │
- *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │L_DEF │      │      │      │                    │      │      │ ESC  │      │
- *                └──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
- *                                          │L_SYS │          │      │                     
- *                                          └──────┘          └──────┘                     
+ *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                                                   ┌──────┬──────┬──────┬──────┬──────┬──────┐
+ *  │  F1  │  F2  │  F3  │  F4  │  F5  │  F6  │                                                   │  F7  │  F8  │  F9  │ F10  │ F11  │ F12  │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │ INS  │ PGUP │ HOME │                                                   │ VOL- │ VOL+ │      │      │      │ CAPS │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │ DEL  │ PGDN │ END  │                                                   │ LEFT │ DOWN │  UP  │ RGHT │      │ SCRL │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │TRANSP│      │      │      │      │      │                                                   │      │ MUTE │      │      │      │TRANSP│
+ *  └──────┴──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┴──────┘
+ *                │L_DEF │      │TRANSP│TRANSP│                                                   │TRANSP│      │ ESC  │ APP  │
+ *                └──────┴──────┴──────┴────┬─┴────┐                                         ┌────┴─┬────┴──────┴──────┴──────┘
+ *                                          │L_SYS │                                         │TRANSP│                     
+ *                                          └──────┘                                         └──────┘                     
  */
         lower_layer {
             bindings = <
-&kp F1       &kp F2     &kp F3       &kp F4  &kp F5    &kp F6         &kp F7   &kp F8   &kp F9  &kp F10   &kp F11  &kp F12
-&kp C_VOL_UP &kp C_NEXT &kp C_BRI_UP &kp INS &kp PG_UP &kp HOME       &none    &none    &none   &none     &none    &kp CAPS
-&kp C_VOL_DN &kp C_PREV &kp C_BRI_DN &kp DEL &kp PG_DN &kp END        &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none    &kp SLCK
-&kp C_MUTE   &kp C_PP   &none        &none   &none     &none          &none    &none    &none   &none     &none    &kp K_APP
-                        &to L_DEF    &none   &none     &none          &none    &none    &kp ESC &none     
-                                                       &mo L_SYS      &none
+&kp F1       &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                  &kp F7          &kp F8        &kp F9        &kp F10       &kp F11      &kp F12
+&none        &none         &none         &kp INS       &kp PG_UP     &kp HOME                &kp C_VOL_DN    &kp C_VOL_UP  &none         &none         &none        &kp CAPS
+&none        &none         &none         &kp DEL       &kp PG_DN     &kp END                 &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT     &none        &kp SLCK
+&trans       &none         &none         &none         &none         &none                   &none           &kp C_MUTE    &none         &none         &none        &trans   
+                           &to L_DEF     &none         &trans        &trans                  &trans          &none         &kp ESC       &kp K_APP 
+                                                                     &mo L_SYS               &trans
              >;
         };
 
 /* SYSTEM
- *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
- *  │BOOTL │      │      │      │      │      │                    │BSEL0 │BSEL1 │BSEL2 │BSEL3 │      │BOOTL │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │      │      │      │      │      │      │                    │      │      │      │      │      │      │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │      │      │      │      │      │BCLEAR│                    │BNEXT │BPREV │      │      │      │      │
- *  ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │RESET │      │      │      │      │      │                    │      │      │      │      │      │RESET │
- *  └──────┴──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┴──────┘
- *                │      │      │      │      │                    │      │      │      │      │
- *                ┴──────┴──────┴──────┴────┬─┴────┐          ┌────┴─┬────┴──────┴──────┴──────┘
- *                                          │      │          │      │                     
- *                                          └──────┘          └──────┘                     
+ *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                                                   ┌──────┬──────┬──────┬──────┬──────┬──────┐
+ *  │BOOTL │      │      │      │      │      │                                                   │BSEL0 │BSEL1 │BSEL2 │BSEL3 │      │BOOTL │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │      │      │      │                                                   │      │      │      │      │      │      │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │      │      │      │      │      │BCLEAR│                                                   │BNEXT │BPREV │      │      │      │      │
+ *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
+ *  │RESET │      │      │      │      │      │                                                   │      │      │      │      │      │RESET │
+ *  └──────┴──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┴──────┘
+ *                │      │      │      │      │                                                   │      │      │      │      │
+ *                ┴──────┴──────┴──────┴────┬─┴────┐                                         ┌────┴─┬────┴──────┴──────┴──────┘
+ *                                          │      │                                         │      │                     
+ *                                          └──────┘                                         └──────┘                     
  */
         system_layer {
             bindings = <
-&bootloader &none &none &none &none  &none            &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none  &bootloader
-&none       &none &none &none &none  &none            &none        &none        &none        &none        &none  &none
-&none       &none &none &none &none  &bt BT_CLR       &bt BT_NXT   &bt BT_PRV   &none        &none        &none  &none
-&sys_reset  &none &none &none &none  &none            &none        &none        &none        &none        &none  &sys_reset
-                  &none &none &none  &none            &none        &none        &none        &none
-                                     &none            &none
+&bootloader  &none         &none         &none         &none         &none                   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none         &bootloader
+&none        &none         &none         &none         &none         &none                   &none           &none         &none         &none         &none         &none
+&none        &none         &none         &none         &none         &bt BT_CLR              &bt BT_NXT      &bt BT_PRV    &none         &none         &none         &none
+&sys_reset   &none         &none         &none         &none         &none                   &none           &none         &none         &none         &none         &sys_reset
+                           &none         &none         &none         &none                   &none           &none         &none         &none
+                                                                     &none                   &none
             >;
         };
     };
 };
+// vim: colorcolumn=14,28,42,56,70,94,110,124,138,152,166
