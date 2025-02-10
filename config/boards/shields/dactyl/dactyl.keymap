@@ -63,11 +63,11 @@
  *  ┌──────┬──────┬──────┬──────┬──────┬──────┐                                                   ┌──────┬──────┬──────┬──────┬──────┬──────┐
  *  │  F1  │  F2  │  F3  │  F4  │  F5  │  F6  │                                                   │  F7  │  F8  │  F9  │ F10  │ F11  │ F12  │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │      │      │      │ INS  │ PGUP │ HOME │                                                   │ VOL- │ VOL+ │      │      │      │ CAPS │
+ *  │      │      │      │ INS  │ PGUP │ HOME │                                                   │      │      │      │      │      │ CAPS │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
  *  │      │      │      │ DEL  │ PGDN │ END  │                                                   │ LEFT │ DOWN │  UP  │ RGHT │      │ SCRL │
  *  ├──────┼──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┼──────┤
- *  │TRANSP│      │      │      │      │      │                                                   │      │ MUTE │      │      │      │TRANSP│
+ *  │TRANSP│      │      │      │      │      │                                                   │      │      │      │      │      │TRANSP│
  *  └──────┴──────┼──────┼──────┼──────┼──────┤                                                   ├──────┼──────┼──────┼──────┼──────┴──────┘
  *                │L_DEF │      │TRANSP│TRANSP│                                                   │TRANSP│      │ ESC  │ APP  │
  *                └──────┴──────┴──────┴────┬─┴────┐                                         ┌────┴─┬────┴──────┴──────┴──────┘
@@ -77,9 +77,9 @@
         lower_layer {
             bindings = <
 &kp F1       &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                  &kp F7          &kp F8        &kp F9        &kp F10       &kp F11      &kp F12
-&none        &none         &none         &kp INS       &kp PG_UP     &kp HOME                &kp C_VOL_DN    &kp C_VOL_UP  &none         &none         &none        &kp CAPS
+&none        &none         &none         &kp INS       &kp PG_UP     &kp HOME                &none           &none         &none         &none         &none        &kp CAPS
 &none        &none         &none         &kp DEL       &kp PG_DN     &kp END                 &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT     &none        &kp SLCK
-&trans       &none         &none         &none         &none         &none                   &none           &kp C_MUTE    &none         &none         &none        &trans   
+&trans       &none         &none         &none         &none         &none                   &none           &none         &none         &none         &none        &trans   
                            &to L_DEF     &none         &trans        &trans                  &trans          &none         &kp ESC       &kp K_APP 
                                                                      &mo L_SYS               &trans
              >;
