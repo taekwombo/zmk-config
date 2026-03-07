@@ -22,11 +22,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp LALT>, <&kp LGUI>;
         };
-        TO_LOW: tap_dance_caps_word_to_low {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&caps_word>, <&to L_LOW>;
+        TO_LOW: hold_tap_app_to_low {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&kp K_APP>, <&to L_LOW>;
+            display-name = "AppCtx-L_LOW";
         };
     };
 
